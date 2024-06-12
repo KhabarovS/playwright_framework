@@ -35,7 +35,7 @@ addopts = [
     '--tb=short',
     '--alluredir=allure_reports',
     '--log_level=DEBUG',
-    '--web_url='
+    '--web_url=https://reqres.in'
 ]
 markers = [
     'web: запуск web тестов',
