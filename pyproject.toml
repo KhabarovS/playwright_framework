@@ -1,0 +1,43 @@
+[tool.poetry]
+name = "playwright-framework"
+version = "0.1.0"
+description = "Framework for CV"
+authors = ["KhabarovS"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+allure-pytest = "^2.13.2"
+playwright = "^1.44.0"
+pydantic = "^2.5.3"
+pytest = "8.0.0"
+requests = "2.31.0"
+mimesis = "11.1.0"
+jsonpath-rw-ext = "1.2.2"
+email-validator = "^2.1.0.post1"
+loguru = "^0.7.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+
+[tool.pytest.ini_options]
+testpaths=["tests"]
+python_classes = ['*Test', 'Test*']
+python_files = ['test_*', '*_test', 'check_*']
+python_functions = ['test_*',  'check_*']
+addopts = [
+    '-v',
+    '-rfExXs',
+    '--disable-warnings',
+    '--tb=short',
+    '--alluredir=allure_reports',
+    '--log_level=DEBUG',
+    '--web_url='
+]
+markers = [
+    'web: запуск web тестов',
+    'api: запуск api тестов'
+]
